@@ -37,7 +37,7 @@ public class Student {
 		System.out.println("[1]Freshman\n[2]Sophmore\n[3]Junior\n[4]Senior");
 		this.gradeYear = scannerObj.nextInt();
 		
-		id++;
+		id++; 
 		
 	}
 
