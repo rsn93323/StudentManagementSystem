@@ -9,7 +9,7 @@ public class StudentManagmentSystem {
 		//Create n numbers of new students
 		
 		Student stuobj1 = new Student();
-//		stuobj1.
+		stuobj1.enroll();
 		
 	}
 
