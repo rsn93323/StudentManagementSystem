@@ -8,7 +8,7 @@ public class Student {
 	private String lastName;
 	private int gradeYear;
 	private String studentID;
-	private String courses;
+	private String courses = null;
 	private int tuitionbalance;
 	private static int costOfCourse = 600;
 	private static int id = 1000;
@@ -27,13 +27,19 @@ public class Student {
 	//enroll in courses
 	public void enroll() {
 		//get intside a loop, user hits 0, 
-		System.out.println("Enter course to enroll(0 to quit)");
+		do {
+		System.out.println("Enter course to enroll(Q to quit)");
 		Scanner scannerObj = new Scanner(System.in);
-		String course = scannerObj.nextLine();
-		if (courses != "Q") {
+		String courses = scannerObj.nextLine();
+		if (!courses.equals("Q") ) {
 			courses = courses + "\n" + courses;
 			tuitionbalance  = tuitionbalance + costOfCourse;	
 		}
+		
+		else {
+			break;
+			}
+		} while (1 != 0);
 		
 		System.out.println("Enrolled in: " + courses);
 		System.out.println("Tuition Balance: " + tuitionbalance);
