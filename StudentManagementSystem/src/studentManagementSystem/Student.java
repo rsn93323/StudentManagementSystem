@@ -8,7 +8,7 @@ public class Student {
 	private String lastName;
 	private int gradeYear;
 	private String studentID;
-	private String courses = null;
+	private String courses;
 	private int tuitionbalance;
 	private static int costOfCourse = 600;
 	private static int id = 1000;
@@ -30,9 +30,9 @@ public class Student {
 		do {
 		System.out.println("Enter course to enroll(Q to quit)");
 		Scanner scannerObj = new Scanner(System.in);
-		String courses = scannerObj.nextLine();
-		if (!courses.equals("Q") && !courses.equals("q") && !courses.equals("0") ) {
-			courses = courses + "\n" + courses;
+		String course = scannerObj.nextLine();
+		if (!course.equals("Q") && !course.equals("q") && !course.equals("0") ) {
+			courses = courses + "\n" + course;
 			tuitionbalance  = tuitionbalance + costOfCourse;	
 		}
 		
@@ -47,8 +47,21 @@ public class Student {
 	}
 	
 	//view balance
-	
+	public void viewBalance() {
+		System.out.println("Your Balance: $" +  tuitionbalance);
+	}
+
 	//pay tuition
+	public void payTuition() {
+		viewBalance();
+		System.out.println("Enter your payment: ");
+		Scanner inputs01 = new Scanner(System.in);
+		int payment = Integer.parseInt(inputs01.nextLine());
+		tuitionbalance = tuitionbalance - payment;
+		System.out.println("Thank you for your payment of $" + payment);
+		viewBalance();
+	}
+
 	
 	//show status
 	
