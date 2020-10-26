@@ -11,7 +11,9 @@ public class StudentManagmentSystem {
 		Student stuobj1 = new Student();
 		stuobj1.enroll();
 
-		fdfsadd
+		System.out.println("test");
+
+
 		
 	}
 
