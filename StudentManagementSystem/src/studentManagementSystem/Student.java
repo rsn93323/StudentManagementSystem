@@ -31,7 +31,7 @@ public class Student {
 		System.out.println("Enter course to enroll(Q to quit)");
 		Scanner scannerObj = new Scanner(System.in);
 		String courses = scannerObj.nextLine();
-		if (!courses.equals("Q") ) {
+		if (!courses.equals("Q") && !courses.equals("q") && !courses.equals("0") ) {
 			courses = courses + "\n" + courses;
 			tuitionbalance  = tuitionbalance + costOfCourse;	
 		}
