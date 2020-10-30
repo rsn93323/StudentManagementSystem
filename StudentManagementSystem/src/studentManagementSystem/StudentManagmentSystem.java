@@ -12,6 +12,8 @@ public class StudentManagmentSystem {
 		Student stuobj1 = new Student();
 		stuobj1.enroll();
 		stuobj1.payTuition();
+		System.out.println(stuobj1.toString());
+		System.out.println(stuobj1.courses);
 
 
 

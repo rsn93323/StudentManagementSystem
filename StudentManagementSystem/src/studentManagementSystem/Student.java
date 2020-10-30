@@ -8,7 +8,7 @@ public class Student {
 	private String lastName;
 	private int gradeYear;
 	private String studentID;
-	private String courses;
+	public String courses = "";
 	private int tuitionbalance;
 	private static int costOfCourse = 600;
 	private static int id = 1000;
@@ -23,26 +23,25 @@ public class Student {
 		id++;
 		this.studentID = gradeYear + "" + id;
 	}
-	
+
 	//enroll in courses
 	public void enroll() {
 		//get intside a loop, user hits 0, 
 		do {
-		System.out.println("Enter course to enroll(Q to quit)");
+		System.out.print("Enter course to enroll(Q to quit) > ");
 		Scanner scannerObj = new Scanner(System.in);
 		String course = scannerObj.nextLine();
 		if (!course.equals("Q") && !course.equals("q") && !course.equals("0") ) {
-			courses = courses + "\n" + course;
+			courses = courses + "\n " + course;
 			tuitionbalance  = tuitionbalance + costOfCourse;	
 		}
-		
 		else {
 			break;
 			}
 		} while (1 != 0);
 		
-		System.out.println("Enrolled in: " + courses);
-		System.out.println("Tuition Balance: " + tuitionbalance);
+//		System.out.println("Enrolled in: " + courses);
+//		System.out.println("Tuition Balance: " + tuitionbalance);
 		
 	}
 	
@@ -62,24 +61,33 @@ public class Student {
 		viewBalance();
 	}
 
-	
+
 	//show status
+	public String toString() {
+		return "Name: " + firstName + " " + lastName
+				+ "\n" + "Year: " + gradeYear
+				+ "\n" + "StudentID: " + studentID
+				+ "\n" + "Courses Enrolled: " + courses
+				+ "\n" + "Balance: $"  + tuitionbalance;
+	}
+
+
 	
 	Student() {
 		Scanner scannerObj = new Scanner(System.in);
-		System.out.println("Enter Student firstname: ");
+		System.out.print("Enter Student firstname: ");
 		this.firstName = scannerObj.nextLine();
 		
-		System.out.println("Enter Student lastname: ");
+		System.out.print("Enter Student lastname: ");
 		this.lastName = scannerObj.nextLine();
 		
 		System.out.println("[1]Freshman\n[2]Sophmore\n[3]Junior\n[4]Senior");
 		this.gradeYear = scannerObj.nextInt();
 		
 		setstudentID();
-		
-		System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID);
-		
+
+//		System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID);
+
 	}
 
 }
