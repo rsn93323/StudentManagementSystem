@@ -8,6 +8,7 @@ public class Student {
 	private String lastName;
 	private int gradeYear;
 	private String studentID;
+	private String major;
 	public String courses = "";
 	private int tuitionbalance;
 	private static int costOfCourse = 600;
@@ -81,10 +82,17 @@ public class Student {
 		System.out.print("Enter Student lastname: ");
 		this.lastName = scannerObj.nextLine();
 		
-		System.out.println("[1]Freshman\n[2]Sophmore\n[3]Junior\n[4]Senior");
-		this.gradeYear = scannerObj.nextInt();
+		System.out.print("[1]Freshman\n[2]Sophmore\n[3]Junior\n[4]Senior"
+				+ "\n" + "Enter year > " );
+		this.gradeYear = Integer.parseInt(scannerObj.nextLine());
+
+		System.out.print("Enter major: ");
+		this.major = scannerObj.nextLine();
 		
 		setstudentID();
+
+
+
 
 //		System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID);
 
