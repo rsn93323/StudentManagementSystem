@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Student {
 	
-	private String firstName;
-	private String lastName;
-	private int gradeYear;
+	private final String firstName;
+	private final String lastName;
+	private final int gradeYear;
 	private String studentID;
-	private String major;
-	public String courses = "";
+	private final String major;
+	public String courses = " ";
 	private int tuitionbalance;
-	private static int costOfCourse = 600;
+	private static final int costOfCourse = 600;
 	private static int id = 1000;
 	
 	
@@ -68,6 +68,7 @@ public class Student {
 		return "Name: " + firstName + " " + lastName
 				+ "\n" + "Year: " + gradeYear
 				+ "\n" + "StudentID: " + studentID
+				+ "\n" + "Major: " + major
 				+ "\n" + "Courses Enrolled: " + courses
 				+ "\n" + "Balance: $"  + tuitionbalance;
 	}

@@ -13,7 +13,6 @@ public class StudentManagmentSystem {
 		stuobj1.enroll();
 		stuobj1.payTuition();
 		System.out.println(stuobj1.toString());
-		System.out.println(stuobj1.courses);
 
 
 
